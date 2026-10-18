@@ -6,7 +6,7 @@ const rawBaseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 const normalizedBaseUrl = rawBaseUrl.replace(/\/+$/, "").replace(/\/api$/, "");
 
 export const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000",
+  baseURL: normalizedBaseUrl,
 });
 
 api.interceptors.request.use((config) => {
